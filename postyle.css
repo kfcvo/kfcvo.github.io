@@ -1,0 +1,28 @@
+.fi{
+  padding-top: 20px;
+  margin-left: 50px;
+  line-height: 2;
+}
+.line{
+  margin:50px;
+}
+.title{
+  margin-left: 80px;
+  font-weight: bold;
+}
+
+#head{
+  position: relative;
+  font-size: 5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+  font-weight: bold;
+  z-index: 1;
+}
+#cardg{
+  margin:50px;
+  margin-left: 50px;
+  padding-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

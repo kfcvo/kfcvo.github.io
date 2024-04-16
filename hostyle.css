@@ -1,0 +1,55 @@
+
+#kawa {
+  z-index: 3;
+  width: 55%;
+  height: auto;
+}
+#bg {
+  position: fixed; /* 将 bg 图片固定在页面底部 */
+  z-index: -1; /* 将 bg 图片放在最底层 */
+  width: 100%
+  height:110%
+}
+#text {
+    position: relative;
+    font-size: 10em;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    font-weight: bold;
+    z-index: 1;
+}
+body {
+    background: #f9f9f9;
+    min-height: 1800px;
+}
+.parallax {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.parallax img {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.sec {
+    position: relative;
+    background: #8BD5FF;
+    padding: 100px;
+}
+
+
+
+.datou{
+  width: 40%;
+  height: auto;
+  margin-left: 290px;
+}
