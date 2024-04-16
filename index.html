@@ -3,107 +3,121 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>dropping colors</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f0f0f0;
-    margin: 0;
-    /* 内边距 */
-    padding: 0;
-    background-color: #f9f9f9;
-  }
-  h1 {
-    margin-top: 20px;
-    color: #333;
-  }
-
-  #gameContainer {
-    position: relative;
-    width: 600px;
-    height: 600px;
-    border: 3px solid #333;
-    /* 外边距 左右自动居中 */
-    margin: 20px auto;
-    /* 溢出内容隐藏 */
-    overflow: hidden;
-    background-color: #fff;
-    /* 边框圆角 */
-    border-radius: 15px;
-    /* 阴影效果 水平垂直阴影偏移 模糊半径 透明度 */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  }
-  .block {
-    width: 50px;
-    height: 50px;
-    position: absolute;
-    /* 鼠标悬停在元素上时的鼠标指针样式为手型  可点击*/
-    cursor: pointer;
-  }
-  #scoreText, #score {
-    color: #333;
-    font-size: 18px;
-  }
-  #win {
-    /* 初始不可见 */
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    /* 居中 */
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    /* 内边距 距离内容 */
-    padding: 20px;
-    border-radius: 10px;
-    border: 2px solid #333;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    /* 图层优先 */
-    z-index: 999;
-    width: 300px;
-    height: 200px;
-  }
-
-  button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-  }
-</style>
+<title>zhirain.</title>
+<link rel="stylesheet" href="hostyle.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </head>
-
 <body>
-<h1>^-^dropping colors*~</h1>
-<h2>选择喜欢的颜色->
-  <select id="colorPicker">
-    <option value="pink">pink</option>
-    <option value="lightgreen">lightgreen</option>
-    <option value="lightblue">lightblue</option>
-    <option value="yellow">yellow</option>
-    <option value="orange">orange</option>
-    <option value="purple">purple</option>
-  </select>
-</h2>
-
-<h2 id="scoreText">点击相应颜色方块来得到7分！</h2>
-<p id="score">得分：0</p>
-<div id="gameContainer"></div>
-<button onclick="startGame()">开始游戏</button>
 
 
+  
+<!-- navigation -->
+<nav class="navbar navbar-expand-lg sticky-top " style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">zhirain.</a>
 
-<!-- 游戏胜利 -->
-<div id="win">
-  <h2>胜利啦</h2>
-  <button onclick="resetGame()">重新开始</button>
-</div>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="nav nav-underline me-auto mb-2 mb-lg-0" >
 
-<script src="game.js"></script>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home.html">Home</a><!-- active 当前页面 -->
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="portfolio.html">Portfolio</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="collections.html">Collections</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="game/game.html">For fun.</a>
+        </li>
+
+      </ul>
+      <span class="navbar-text">
+        Welcome to my cyber life.
+      </span>
+    </div>
+  </div>
+</nav>
+
+<section class="parallax">
+        <img src="img/bg.jpg" id="bg">
+        <img src="img/kawa.png" id="kawa">
+        <h1 id="text" >Welcome</h1>
+    </section>
+
+    <section class="sec">
+      <div class="container-fluid">
+      	<div class="row">
+      		<div class="col-lg-6">
+      			<h2>Hello! 💗</h2>
+      			<p>Welcome to my website! I'm thrilled to have you here. Whether you're exploring for the first time or returning for more, I hope you find exactly what you're looking for. Feel free to browse around and discover all that I have to offer. If you have any questions or need assistance, don't hesitate to reach out to me. </p>
+      			<p>Enjoy your stay!</p>
+      			<br>
+
+      		</div>
+      		<div class="col-lg-6">
+      			<img src="img/8.png"  class="datou">
+      		</div>
+      	</div>
+      </div>
+      <hr class="my-4">
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>See my portfolio 📁</h2>
+            <p>Welcome to my portfolio, where creativity meets design! Here, you'll find a showcase of the posters and layouts I've meticulously crafted. Each piece is a testament to my passion for visual storytelling and attention to detail.  I invite you to explore and immerse yourself in the diverse range of projects I've curated. From bold and vibrant posters to sleek and sophisticated layouts, there's something here to captivate every eye. Feel free to wander through the corridors of my creative journey. </p>
+            <p>Let's embark on this visual adventure together!</p>
+            <br>
+            <a href="portfolio.html" class="btn btn-primary">Learn More</a>
+          </div>
+          <div class="col-lg-6">
+            <img src="img/usagi.png"  class="datou">
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2>Find useful webs 🔗</h2>
+            <p>Explore this curated list of popular websites offering reference images, homework tools, and exam registration services. From image libraries to study aids, find everything you need to excel academically in one place.</p>
+            <br>
+            <a href="collections.html" class="btn btn-primary">Learn Learn</a>
+          </div>
+          <div class="col-lg-6">
+            <img src="img/jy.png"  class="datou">
+          </div>
+        </div>
+      </div>
+      <hr class="my-4">
+  </section>
+</body>
+</html>
+
+<script type="text/javascript">
+let bg =document.getElementById("bg");
+let kawa =document.getElementById("kawa");
+let text =document.getElementById("text");
+
+window.addEventListener('scroll',function(){
+  var value=window.scrollY;
+
+  bg.style.top=value*0.5+'px';
+  kawa.style.top=-value*0.15+'px';
+  text.style.top=value*1+'px';
+
+});
+</script>
+
 </body>
 </html>
