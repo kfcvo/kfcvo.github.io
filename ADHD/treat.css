@@ -1,0 +1,166 @@
+@font-face {
+  font-family: 'font'; /* 自定义字体名称 */
+  src: url('font.ttf') format('truetype'); /* 引入字体文件的路径，可以是相对或者绝对路径 */
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-icon{
+  margin-left: 20px;
+}
+
+       a:link {color:#000000;}
+       a:visited {color:#000000;}
+
+       .no-underline, .no-underline:hover, .no-underline:active, .no-underline:focus {
+        text-decoration: none;
+      }
+
+
+.section {
+  height: 100vh; /* 每个板块高度为视窗高度 */
+  width: 100%;
+  background-color: #A7DE9B;
+}
+
+
+.section1 {
+  height: 100vh; /* 每个板块高度为视窗高度 */
+  width: 100%;
+  background-color: #315343;
+}
+
+.section2 {
+  height: 100vh; /* 每个板块高度为视窗高度 */
+  width: 100%;
+  background-color: #A7DE9B;
+        }
+
+.sectionW {
+                    height: 70vh; /* 每个板块高度为视窗高度 */
+                    width: 100%;
+                    background-color: #315343;
+                    padding: 100px;
+                }
+
+
+
+.sectionG {
+              height: 70vh; /* 每个板块高度为视窗高度 */
+              width: 100%;
+              background-color: #A7DE9B;
+                                }
+
+body {
+  font-family: 'font', Arial, sans-serif; /* 将自定义字体应用在 body 元素上 */
+
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+background-color: #F7F0E6;
+          margin: 0;
+      }
+      .text{
+        justify-content: center;
+        color: white;
+        margin-top: 0px;
+        font-weight: bold;
+      }
+      .text2{
+        justify-content: center;
+        color: white;
+        margin-top: 20px;
+        font-weight: lighter;
+
+      }
+
+      .question-container, .info-container {
+          text-align: center;
+          display: none;
+          margin-top: 0px;
+
+      }
+      .btn-group {
+          gap: 20px;
+          width: 400px;
+          margin-top: 50px;
+          margin-bottom: 300px;
+      }
+      .section {
+        text-align: center;
+        text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 垂直居中 */
+    justify-content: center;
+    min-height: 100vh; /* 使内容垂直居中 */
+    }
+
+      .no{
+        background-color: #A7DE9B;
+        color: #444444;
+      }
+      .no:hover {
+          background-color: #9CD190; /* 悬停时的颜色 */
+      }
+      .learn-btn {
+          display: none;
+          width: 200px;
+          margin-top: 50px;
+          margin-bottom: 300px;
+      }
+      .learn-btn.active{
+          display: inline-block;
+      }
+.radius-btn{
+  background-color: #A7DE9B; /* 绿色背景 */
+           border: none;
+           color:#444444;
+           padding: 15px 32px;
+           text-align: center;
+           text-decoration: none;
+           display: inline-block;
+           font-size: 16px;
+           margin: 4px 2px;
+           cursor: pointer;
+           width: 200px;
+           border-radius: 30px; /* 圆角 */
+           font-weight: bold;
+}
+.container{
+  margin: 20px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+
+
+.accordion {
+  padding: 100px; /* 为手风琴组件添加内边距 */
+  margin-top: -160px; /* 根据需要调整这个值 */
+
+}
+/* 如果您还想要为手风琴中的每个项目添加额外的内边距，可以添加如下样式 */
+.accordion-item {
+  margin-bottom: 10px; /* 每个项目之间的外边距 */
+}
+.accordion-body {
+  padding: 20px; /* 为手风琴内容部分添加内边距 */
+}
+  .accordion-button.collapsed {
+    background-color: #F7F0E6; /* 收起状态的背景色 */
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: #F7F0E6; /* 展开时的背景色 */
+  }
+  .accordion-button:focus {
+    box-shadow: none; /* 移除选中时的默认阴影效果 */
+  }
+
+  .videobox{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
