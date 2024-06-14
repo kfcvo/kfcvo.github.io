@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T55W1DFLCY"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-T55W1DFLCY');
+</script>
+    <meta charset="utf-8">
+    <title>ADHD Oasis Introduction</title>
+
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <script src="qa.js"></script>
+       <link rel="stylesheet" href="introduction.css">
+
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary fixed-top">
+          <a class="navbar-brand" href="#">
+              <img src="img/logo.png" alt="icon" width="auto" height="24">
+          </a>
+          <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link active" href="introduction.html">Introduction</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="Treat.html">Treatment</a>
+                  </li>
+              </ul>
+          </div>
+
+      </nav>
+<!-- one -->
+<div class="section">
+  <h1 class="text display-5" style="color:#444444"> Learn all about ADHD here</h1>
+  <h5 class="text2" style="color:#444444">Attention-Deficit/Hyperactivity Disorder
+    <br>Also known as ADHD</h5>
+    <br>
+  <video width="600" autoplay controls>
+    <source src="introduction.mp4" type="video/mp4">
+    <source src="path/to/your/video.ogg" type="video/ogg">
+</video>
+  </video>
+</div>
+<!-- part 2-->
+<div class="sectionW d-flex align-items-center" style="color: #444444;">
+  <div class="row">
+    <div class="col-10 offset-1 p-3 mb-5 d-flex flex-column">
+      <div class="content-wrapper d-flex flex-column justify-content-between flex-grow-1">
+        <div>
+          <h3 class="card-title"style="color:#F5F7F5"><strong>What is ADHD</strong></h3>
+          <br>
+          <p class="card-text"style="color:#F5F7F5">Attention-deficit/hyperactivity disorder (ADHD) is a common neurotype that is usually first diagnosed during childhood though diagnoses in adults have surged in the past few years. It is characterized by patterns of inattention, hyperactivity, and impulsivity that make it difficult for people to function in a way that's deemed "standard" or neurotypical.
+            <br>ADHD is lifelong. While traits do change with time, they can still interfere with an adult's functioning. Relationships, health, work, and finances are just a few areas that may be impacted. There are management options, including medications and therapies, as well as helpful strategies that can help you live well with ADHD.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- part 3 -->
+<div class="sectionG d-flex" style="color: #444444;">
+  <div class="container">
+    <div class="row">
+      <div class=" p-3 mb-5 col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+      <h3 class="card-title"> <strong>Did You Know?</strong> </h3>
+        <p class="card-text" style="padding-top:20px;">In 2022, an additional 1 million U.S. children aged 3-17 years had ever received an ADHD diagnosis compared to 2016.
+          <br>
+          By adjusting for the global demographic structure in 2020, the prevalence of persistent adult ADHD was 2.58% and that of symptomatic adult ADHD was 6.76%, translating to <strong>139.84 million and 366.33 million</strong> affected adults in 2020 globally.</p>
+        </div>
+        <div class="col-3" style="padding-left:50px;">
+          <canvas id="chart2" width="100" height="100"></canvas>
+          <script>
+            let chart2 = document.getElementById('chart2').getContext('2d');
+            let myChart2 = new Chart(chart2,{
+              type:'doughnut',
+              data:{
+                labels:['Persistent','Other'],
+                datasets:[{
+                  data:[
+                  2.6,
+                  97.4,
+                ],
+                backgroundColor:[
+                  '#B5F8FF',
+                  '#49C3FB',
+                ],
+                borderWidth:0,
+                borderColor:'#444444',
+                hoverBorderWidth:1,
+                hoverBorderColor:'#444444'
+              }],
+              },
+              options:{
+                plugins:{
+                  title:{
+                    display:true,
+                    text:'The Prevalence of Persistent Adult ADHD ',
+                    font:{
+                      size:14,
+                      color:'#444444'
+                    }
+                  },
+                  legend:{
+                    display:true,
+                    position:'bottom',
+                    labels:{
+                      boxWidth: 14,
+                      font:{
+                        size:14,
+                      }
+                    },
+                  },
+                  tooltip:{
+                    enabled:true,
+                  },
+                },
+              },
+            });
+            myChart2.canvas.style.width = '250px';
+            myChart2.canvas.style.height = '250px';
+          </script>
+        </div>
+        <div class="col-3">
+          <canvas id="chart3" width="100" height="100"></canvas>
+          <script>
+              let chart3 = document.getElementById('chart3').getContext('2d');
+              let myChart3 = new Chart(chart3,{
+                type:'doughnut',
+                data:{
+                  labels:['Symptomatic','Other'],
+                  datasets:[{
+                    data:[
+                    6.8,
+                    93.2,
+                  ],
+                  backgroundColor:[
+                    '#B5F8FF',
+                    '#49C3FB',
+                  ],
+                  borderWidth:0,
+                  borderColor:'#444444',
+                  hoverBorderWidth:1,
+                  hoverBorderColor:'#444444'
+                }],
+                },
+                options:{
+                  plugins:{
+                    title:{
+                      display:true,
+                      text:'The Prevalence of Symptomatic Adult ADHD ',
+                      font:{
+                        size:14,
+                        color:'#444444'
+                      }
+                    },
+
+                    legend:{
+                      display:true,
+                      position:'bottom',
+                      labels:{
+                        boxWidth: 14,
+                        font:{
+                          size:14,
+                        }
+                      },
+                    },
+                    tooltip:{
+                      enabled:true,
+                    },
+                  },
+                },
+              });
+              myChart3.canvas.style.width = '250px';
+              myChart3.canvas.style.height = '250px';
+              </script>
+            </blockquote>
+        </div>
+      </div>
+        <div class="p-3 mb-5" >
+              <div class="row">
+                <div class="col-6">
+                  <canvas id="chart" style="width:100%"></canvas>
+                  <script>
+                    let chart = document.getElementById('chart').getContext('2d');
+                    let myChart = new Chart(chart,{
+                      type:'bar',//line,radar,pie,dougnut,etc.
+                      data:{
+                        labels:['Overall','Age 3-5 Years','Age 6-11 Years','Age 12-17 Years'],
+                        datasets:[{
+                          label:'Any co-occurring condition included in the study',
+                          data:[
+                          77.9,
+                          83.4,
+                          78.1,
+                          77.4
+                        ],
+                        backgroundColor:[
+                          'rgba(49,83,67,1)',
+                        ],
+                        stack:'group1',
+                        hoverBorderWidth:2,
+                        hoverBorderColor:'#444444'
+                      },
+                      {
+                        label:'Behavioral or conduct problems',
+                        data:[
+                        44.1,
+                        61.4,
+                        50.3,
+                        38
+                      ],
+                      backgroundColor:[
+                        'rgba(65,150,51,1)',
+                      ],
+                      stack:'group2',
+                      hoverBorderWidth:2,
+                      hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Anxiety',
+                      data:[
+                      39.1,
+                      23.7,
+                      35,
+                      43.3
+                    ],
+                    backgroundColor:[
+                      'rgba(130,214,116,1)',
+                    ],
+                    stack:'group3',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Depression',
+                      data:[
+                      18.9,
+                      3.4,
+                      10.8,
+                      26.3
+                    ],
+                    backgroundColor:[
+                      'rgba(166,232,209,1)',
+                    ],
+                    stack:'group4',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Tourette syndrome (TS)',
+                      data:[
+                      1,
+                      0,
+                      1.1,
+                      1
+                    ],
+                    backgroundColor:[
+                      'rgba(0,225,179,1)',
+                    ],
+                    stack:'group5',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Learning disability',
+                      data:[
+                      36.5,
+                      33.1,
+                      36.5,
+                      36.8
+                    ],
+                    backgroundColor:[
+                      'rgba(181,248,255,1)',
+                    ],
+                    stack:'group6',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Developmental delay',
+                      data:[
+                      21.7,
+                      55.8,
+                      22.9,
+                      18.3
+                    ],
+                    backgroundColor:[
+                      'rgba(146,208,237,1)',
+                    ],
+                    stack:'group7',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Speech/language disorder',
+                      data:[
+                      14.8,
+                      46.6,
+                      19,
+                      9.2
+                    ],
+                    backgroundColor:[
+                      'rgba(73,195,251,1)',
+                    ],
+                    stack:'group8',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Autism spectrum disorder (ASD)',
+                      data:[
+                      14.4,
+                      34.7,
+                      14.6,
+                      12.8
+                    ],
+                    backgroundColor:[
+                      'rgba(80,123,168,1)',
+                    ],
+                    stack:'group9',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                    {
+                      label:'Intellectual disability',
+                      data:[
+                      4.4,
+                      8.2,
+                      4,
+                      4.4
+                    ],
+                    backgroundColor:[
+                      'rgba( 50,80,141,1)',
+                    ],
+                    stack:'group10',
+                    hoverBorderWidth:2,
+                    hoverBorderColor:'#444444'
+                    },
+                      ]
+                      },
+                      options:{
+                        indexAxis: 'x',
+                        plugins:{
+                          title:{
+                            display:true,
+                            text:'Co-occurring Conditions with ADHD (%) – Interactive Data Charts',
+                            font:{
+                              size:20,
+                              color:'#444444',
+                            }
+                          },
+                          legend:{
+                            display:true,
+                            position:'bottom',
+                            labels:{
+                              wordWrap: true,
+                              boxWidth: 16,
+                              font:{
+                                size:16
+                              }
+                            }
+                          },
+                          layout:{
+                            padding:{
+                              left:0,
+                              right:0,
+                              top:0,
+                              bottom:0
+                            }
+                          },
+                          tooltip:{
+                            enabled:true
+                          }
+                        }
+                      }
+                    });
+                    </script>
+                    </blockquote>
+                </div>
+                <div class="col-6" style="padding-left:50px;">
+                <h3 class="card-title" style="margin-top:50px;"> <strong>Co-occurring Conditions with ADHD</strong> </h3>
+                <p class="card-text" style="padding-top:20px;"> <strong>Many children with ADHD also have other co-occurring conditions. </strong> <br>
+                  According to a national 2022 parent survey, nearly 78% of children with ADHD had at least one other co-occurring condition: <br>
+                  · Almost half of the children with ADHD had a behavior or conduct problem. <br>
+                  · About 4 in 10 of the children with ADHD had anxiety. <br>
+                  Other conditions affecting children with ADHD include depression, autism spectrum disorder, and Tourette syndrome.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<!-- part 5 -->
+<div class="container">
+	<div class="row jumbotron">
+		<div class=" col-xs-11 col-sm-11 col-md-9 col-lg-9 col-xl-9" id="postext">
+    <h3><strong>Related Posts</strong></h3>
+			<p>Content is reviewed before publication and upon substantial updates.</p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 col-xl-2">
+		  <a href="#" class="radius-btn">Read More</a>
+    </div>
+      <div class="row" style="padding-top:50px;justify-content: center;">
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card h-100">
+          <img src="img/1.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Justice Sensitivity Is Plaguing Autistic & ADHD Individuals—Here's What to Know</p>
+            <p style="color:#315343; font-size:12px">Medically reviewed by Claire Eggleston, LMFT-Associate</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card h-100">
+          <img src="img/2.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">The 9 Best Online Psychiatry Services That Take Insurance</p>
+            <p style="color:#315343; font-size:12px">Medically reviewed by Steve Gans, MD</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card h-100">
+          <img src="img/3.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">Understanding Binge Eating and ADHD</p>
+            <p style="color:#315343; font-size:12px">Medically reviewed by Rachel Goldman, PhD, FTOS</p>
+          </div>
+        </div>
+      </div>
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+          <div class="card h-100">
+          <img src="img/4.png" class="card-img-top"  alt="...">
+          <div class="card-body">
+            <p class="card-text">Marijuana and ADHD: What the Research Says</p>
+            <p style="color:#315343; font-size:12px">Medically reviewed by John CUmhau, MD, MPH, CPE</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- qa -->
+    <div class="section d-flex align-items-center">
+      <div class="container">
+        <div class="row g-0">
+          <div class="col-sm-5 col-md-4 offset-1 d-flex flex-column align-items-start text-left">
+            <h3 class="card-title"><strong>Frequently Asked Questions</strong></h3>
+            <a href="#" class="radius-btn">Ask A Question</a>
+          </div>
+          <div class="col-6 col-md-7 d-flex flex-column align-items-stretch text-left">
+            <div class="accordion" id="accordionExample">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What causes ADHD?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="text-align:left">
+                    The exact causes of ADHD are not known but experts believe there are a number of factors at play. Genetics are thought to play a significant role in causing ADHD, but environmental factors also contribute and often interact with genetic predispositions. Factors that can increase the risk of ADHD include certain illnesses such as meningitis, exposure to toxins such as lead, and nutrition deficiencies or substance use during pregnancy.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    How is ADHD diagnosed?
+                  </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="text-align:left">
+                    There is no simple lab test or questionnaire that can determine if a person has ADHD. Mental health professionals conduct an evaluation and can use a variety of tools including IQ tests, interviews, measures of attention, rating scales, and other assessments to evaluate symptoms and determine if they meet the criteria for diagnosis.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Is ADHD a mental illness?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="text-align:left">
+                    ADHD is classified as a mental illness, but can also be described as a neurotype. It is important to recognize that mental illness is a broad term that refers to any type of condition that impacts a person's thoughts, moods, or behaviors. Because the three primary symptoms of ADHD—inattention, impulsivity, and hyperactivity—all impact these areas, ADHD is considered a form of mental illness.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    Is ADHD genetic?
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                  <div class="accordion-body" style="text-align:left">
+                    There is a strong genetic component to ADHD. Estimates suggest that the genetic heritability of the condition is over 70%. However, having a genetic predisposition does not necessarily mean that you will develop ADHD. Research has found that there are several genes that play a role and it is the interaction of these genes along with environmental influences that may cause the disorder.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Is ADHD considered a disability?
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                  <div class="accordion-body"style="text-align:left">
+                    ADHD may be considered a disability according to the guidelines established by the Americans with Disabilities Act (ADA) if you have impairments that limit one or more major life activities (such as work or school). There must be a record of this impairment or others must be able to perceive these challenges. This means some people who have ADHD may request accommodations at work or school.
+                </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <!--- Footer -->
+  <div class="section" style="color: #ffffff; background-color:#315343">
+  <footer>
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-12">
+          <img  src="img/logo1.png" alt="..." width="auto" height="150">
+          <h3 style="margin-top: 20px">ADHD Oasis<br>For people with ADHD and those who care about them.</h3>
+          <p><br>Welcome to ADHD Oasis, where you can learn about the symptoms and<br> diagnosis of ADHD. In the meantime, if you or someone you know has ADHD,<br> you can learn how to help them here.</p>
+        </div>
+      </div>
+    </div>
+
+  	<div class="container-fluid">
+  		<div class="row text-center">
+  			<div class="col-12">
+  				<hr class="light">
+  				<h5>&copy;  2024 ADHD Oasis, Inc </h5>
+  			</div>
+  		</div>
+  	</div>
+  </footer>
+	</div>
+
+  </body>
+</html>
