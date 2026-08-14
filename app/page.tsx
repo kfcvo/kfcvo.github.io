@@ -58,6 +58,7 @@ export default function Home() {
                 fill
                 sizes="(max-width: 720px) 45vw, 28vw"
                 priority={index < 4}
+                unoptimized
               />
             </figure>
           ))}
