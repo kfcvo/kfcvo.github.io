@@ -44,12 +44,8 @@ export function HomeCollage() {
           );
         })}
 
-        <div className="collage-note" aria-label="我的设计方法">
-          <small>MY APPROACH</small>
-          <p>Observe deeply.<br />Frame clearly.<br />Build thoughtfully.</p>
-        </div>
         <span className="collage-sound" aria-hidden="true">♪</span>
-        <Link className="collage-signature" href="#practice">My Portfolio <span>↘</span></Link>
+        <Link className="collage-signature" href="#practice">My Portfolio</Link>
       </div>
     </section>
   );
