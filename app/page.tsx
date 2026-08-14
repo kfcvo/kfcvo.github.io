@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HomeCollageEditor } from "./components/HomeCollageEditor";
+import { HomeCollage } from "./components/HomeCollage";
 import { SiteNav } from "./components/SiteNav";
 
 const practices = [
@@ -34,7 +34,7 @@ export default function Home() {
     <main className="home-page home-compact" id="top">
       <SiteNav />
 
-      <HomeCollageEditor />
+      <HomeCollage />
 
       <section className="practice-section" id="practice" aria-label="作品分类">
         <div className="section-heading section-heading-minimal">
