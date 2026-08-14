@@ -24,7 +24,6 @@ export default function AboutPage() {
 
       <section className="about-manifesto">
         <p className="eyebrow">A NOTE ON MY PRACTICE</p>
-        <blockquote>“我喜欢站在技术与用户之间：既追问系统如何工作，也追问它为何值得被使用。”</blockquote>
       </section>
 
       <section className="about-journey" aria-labelledby="journey-heading">

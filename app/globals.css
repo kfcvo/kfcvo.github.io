@@ -57,8 +57,8 @@ img { display: block; max-width: 100%; }
   border-radius: 50%;
   color: #fff;
   background: var(--ink);
-  font-size: 11px;
-  letter-spacing: 0.08em;
+  font-size: 8px;
+  letter-spacing: 0.02em;
 }
 .wordmark small { font-size: 9px; font-weight: 700; letter-spacing: 0.14em; }
 .site-nav { display: flex; align-items: center; gap: clamp(22px, 3.2vw, 48px); }

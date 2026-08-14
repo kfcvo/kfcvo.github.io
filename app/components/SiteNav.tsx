@@ -4,7 +4,7 @@ export function SiteNav() {
   return (
     <header className="site-header">
       <Link className="wordmark" href="/" aria-label="陈知雨个人作品集首页">
-        <span>CZY</span>
+        <span>Zhirain</span>
         <small>PORTFOLIO · 2026</small>
       </Link>
       <nav className="site-nav" aria-label="主导航">
