@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent, type PointerEvent } from "react";
 
-const STORAGE_KEY = "czy-home-collage-layout-v1";
+const STORAGE_KEY = "czy-home-collage-layout-v2";
 
 const collageImages = [
   { id: "texture-01", src: "/home/home-texture-01.png", alt: "灰绿色抽象绘画", className: "collage-one" },
@@ -40,14 +40,14 @@ type DragAction = {
 };
 
 const defaultLayout: LayoutItem[] = [
-  { x: 29, y: 8, width: 27, height: 29, rotation: 0.7, z: 4 },
-  { x: 9, y: 26, width: 29, height: 25, rotation: -0.5, z: 3 },
-  { x: 33, y: 35, width: 27, height: 39, rotation: 0.4, z: 6 },
-  { x: 55, y: 25, width: 31, height: 28, rotation: 0.25, z: 5 },
-  { x: 18, y: 13, width: 19, height: 21, rotation: -1.2, z: 2 },
-  { x: 74, y: 60, width: 26, height: 23, rotation: -0.6, z: 3 },
-  { x: 22, y: 73, width: 24, height: 24, rotation: 0.9, z: 2 },
-  { x: 75, y: 8, width: 20, height: 19, rotation: 1, z: 1 },
+  { x: 73.41, y: 43.2, width: 20.65, height: 18.01, rotation: 0.7, z: 0 },
+  { x: 0, y: 26.62, width: 29, height: 22.51, rotation: -0.5, z: 3 },
+  { x: 26.89, y: 30.1, width: 29.62, height: 34.38, rotation: 0.4, z: 11 },
+  { x: 16.01, y: 59.76, width: 15.25, height: 11.89, rotation: 0.25, z: 5 },
+  { x: 51.09, y: 20.12, width: 15.53, height: 18.33, rotation: -1.2, z: 10 },
+  { x: 45.35, y: 50.32, width: 23.05, height: 18.15, rotation: -0.6, z: 3 },
+  { x: 56.09, y: 27.15, width: 29.39, height: 25.87, rotation: 0.9, z: 9 },
+  { x: 14.85, y: 16.65, width: 21.8, height: 20.3, rotation: 1, z: 7 },
 ];
 
 const clamp = (value: number, min: number, max: number) => Math.min(Math.max(value, min), max);
