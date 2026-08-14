@@ -38,7 +38,7 @@ export default function Home() {
 
       <section className="practice-section" id="practice" aria-label="作品分类">
         <div className="section-heading section-heading-minimal">
-          <p className="eyebrow">WORK ARCHIVE</p>
+          <p className="eyebrow">WORK EXPERIENCE</p>
         </div>
         <div className="folder-grid">
           {practices.map((practice) => (

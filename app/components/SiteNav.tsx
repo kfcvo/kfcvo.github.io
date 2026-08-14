@@ -12,7 +12,6 @@ export function SiteNav() {
         <Link href="/#practice"><span>WORKS</span><small>作品集</small></Link>
         <Link href="/about"><span>ABOUT ME</span><small>关于我</small></Link>
       </nav>
-      <a className="header-contact" href="mailto:is_chenzhiyu@163.com">LET&apos;S TALK ↗</a>
     </header>
   );
 }
