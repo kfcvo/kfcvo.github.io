@@ -15,7 +15,6 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="about-title">
           <p className="eyebrow">ABOUT / 陈知雨</p>
-          <h1>理性地拆解问题，<br /><em>感性地理解人。</em></h1>
         </div>
         <figure className="about-portrait">
           <div className="portrait-frame"><Image src="/portrait.png" alt="陈知雨个人照片" width={323} height={388} priority unoptimized /></div>
