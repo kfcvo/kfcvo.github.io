@@ -1,17 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { HomeCollageEditor } from "./components/HomeCollageEditor";
 import { SiteNav } from "./components/SiteNav";
-
-const collageImages = [
-  { src: "/home/home-texture-01.png", alt: "灰绿色抽象绘画", className: "collage-one" },
-  { src: "/home/home-texture-02.png", alt: "淡蓝色花卉绘画", className: "collage-two" },
-  { src: "/home/home-texture-03.png", alt: "蓝紫色花朵绘画", className: "collage-three" },
-  { src: "/home/home-texture-04.png", alt: "树影与花朵绘画", className: "collage-four" },
-  { src: "/home/home-texture-05.png", alt: "灰绿色百合绘画", className: "collage-five" },
-  { src: "/home/home-texture-06.png", alt: "灰蓝色写意花卉", className: "collage-six" },
-  { src: "/home/home-texture-07.png", alt: "淡紫色花蕊绘画", className: "collage-seven" },
-  { src: "/home/home-texture-08.png", alt: "蓝灰色抽象纹理", className: "collage-eight" },
-];
 
 const practices = [
   {
@@ -45,32 +34,7 @@ export default function Home() {
     <main className="home-page home-compact" id="top">
       <SiteNav />
 
-      <section className="collage-hero" aria-label="陈知雨个人作品集主视觉">
-        <div className="collage-scene">
-          <p className="collage-kicker">PRODUCT · AI · EXPERIENCE</p>
-          <p className="collage-edition">PORTFOLIO / 2026<br />SINGAPORE — BEIJING</p>
-
-          {collageImages.map((image, index) => (
-            <figure className={`collage-piece ${image.className}`} key={image.src}>
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 720px) 45vw, 28vw"
-                priority={index < 4}
-                unoptimized
-              />
-            </figure>
-          ))}
-
-          <div className="collage-note" aria-label="我的设计方法">
-            <small>MY APPROACH</small>
-            <p>Observe deeply.<br />Frame clearly.<br />Build thoughtfully.</p>
-          </div>
-          <span className="collage-sound" aria-hidden="true">♪</span>
-          <Link className="collage-signature" href="#practice">My Portfolio <span>↘</span></Link>
-        </div>
-      </section>
+      <HomeCollageEditor />
 
       <section className="practice-section" id="practice" aria-label="作品分类">
         <div className="section-heading section-heading-minimal">
