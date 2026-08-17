@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SiteFooter } from "../../components/SiteFooter";
 import { SiteNav } from "../../components/SiteNav";
 import { standardCases } from "../../data";
@@ -15,17 +16,13 @@ export default function ProjectsPage() {
         </div>
         <div className="featured-list">
           <article className="featured-project project-category-case">
-            <div className="project-visual project-visual-mood" aria-hidden="true">
+            <div className="project-visual project-visual-mood project-visual-shot" aria-hidden="true">
               <span className="visual-index">PROJECT / 01</span>
-              <div className="mood-ui">
-                <div className="mood-orbit"><span>今天，想先聊聊什么？</span><i>☺</i></div>
-                <div className="mood-days"><b>M</b><b>T</b><b className="active">W</b><b>T</b><b>F</b></div>
-                <p>emotion, gently understood.</p>
-              </div>
+              <Image src="/projects/qingxu-ui.png" alt="" width={1677} height={965} priority unoptimized />
             </div>
             <div className="featured-copy">
               <p className="eyebrow">{project.eyebrow}</p>
-              <h2>{project.title} 情绪陪伴系统</h2>
+              <h2>{project.title}</h2>
               <p>{project.summary}</p>
               <ul>{project.metadata.slice(2).map(([, value]) => <li key={value}>{value}</li>)}</ul>
               <div className="inline-accordion" aria-label="MoodMate 项目过程">

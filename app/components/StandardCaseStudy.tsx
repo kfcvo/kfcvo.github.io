@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { type StandardCase } from "../data";
 
 function CaseHeroVisual({ data }: { data: StandardCase }) {
@@ -5,7 +6,9 @@ function CaseHeroVisual({ data }: { data: StandardCase }) {
     <div className={`case-hero-visual case-hero-${data.kind}`} aria-hidden="true">
       <div className="case-window">
         <div className="case-window-top"><i /><i /><i /><span>{data.eyebrow}</span></div>
-        {data.kind === "project" ? (
+        {data.heroImage ? (
+          <Image className="case-product-shot" src={data.heroImage} alt="" width={1677} height={965} priority unoptimized />
+        ) : data.kind === "project" ? (
           <div className="mood-dashboard">
             <div className="mood-greeting"><small>GOOD EVENING</small><strong>How are you, really?</strong><p>Take a quiet moment for yourself.</p></div>
             <div className="mood-pulse"><i>☺</i><span>CALM</span></div>

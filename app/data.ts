@@ -44,8 +44,8 @@ export const workCategories: WorkCategory[] = [
     items: [
       {
         index: "01",
-        title: "MoodMate AI",
-        meta: "多模态心理健康系统",
+        title: "轻叙 AI 情绪伴侣",
+        meta: "高校情绪陪伴小程序",
         href: "/works/projects/moodmate-ai",
       },
     ],
@@ -280,6 +280,7 @@ export type StandardCase = {
   title: string;
   eyebrow: string;
   status: string;
+  heroImage?: string;
   summary: string;
   metadata: Array<[string, string]>;
   contribution: string;
@@ -291,38 +292,43 @@ export type StandardCase = {
 export const standardCases: Record<string, StandardCase> = {
   "moodmate-ai": {
     kind: "project",
-    title: "MoodMate AI",
-    eyebrow: "MULTIMODAL MENTAL WELLBEING",
-    status: "MVP COMPLETED",
+    title: "轻叙 AI 情绪伴侣",
+    eyebrow: "CAMPUS AI EMOTIONAL COMPANION",
+    status: "MVP COMPLETED / THIRD PRIZE",
+    heroImage: "/projects/qingxu-ui.png",
     summary:
-      "面向高校学生的轻量情绪管理系统，用差异化 AI 陪伴、情绪日历和自我量化降低表达压力。",
+      "面向高校学生的“零社交压力”AI 情绪伴侣，通过差异化 Agent、情绪—行为归因日历与轻量化自我观察，降低学生表达和求助的心理门槛。",
     metadata: [
       ["Period", "2023.12 — 2024.06"],
-      ["Role", "项目负责人 / 前端开发"],
-      ["Scope", "300+ 样本调研"],
-      ["Outcome", "北京市级互联网+三等奖"],
+      ["Role", "项目负责人 / 产品统筹"],
+      ["Research", "300+ 样本 / 60% 隐私顾虑"],
+      ["Outcome", "MVP 落地 / 大赛三等奖"],
     ],
     contribution:
-      "负责从用户研究、产品定位到 AI Agent 人设与 Uniapp MVP 的完整推进，并参与前端开发和数据可视化落地。",
+      "作为项目负责人，统筹推进高校 AI 情绪伴侣小程序从 0 到 1 的产品落地，负责用户研究、产品定位、功能规划、Agent 策略与 Uniapp MVP 开发协作。",
     sections: [
       {
         title: "01 / Background",
-        body: "调研显示，60% 的学生存在情绪困扰，但因隐私顾虑不愿寻求心理中心的人工咨询。团队由此将产品定位为低压力、轻量级的 AI 情绪伴侣。",
+        body: "高校学生面临学业、人际和就业等多重压力，但传统心理咨询存在预约成本、表达负担与隐私顾虑。300+ 样本调研显示，60% 的学生会因隐私担忧拒绝人工心理咨询；真正的产品机会不是替代专业治疗，而是在情绪出现的当下提供一个更容易开始的轻量入口。",
       },
       {
-        title: "02 / Product decision",
-        body: "针对“求安慰”和“求建议”两种不同诉求，设计倾听型与指导型两类 AI 咨询师；通过 System Prompt 与 Few-Shot 调整回应方式。",
+        title: "02 / Product positioning",
+        body: "团队将产品定义为“零社交压力情绪疏导”：不要求用户暴露身份，不制造被评判感，以情绪自测、低门槛记录和 AI 对话承接即时情绪需求。产品边界聚焦陪伴、自我觉察和日常疏导，不把 AI 包装成专业心理医生。",
       },
       {
-        title: "03 / Retention loop",
-        body: "规划“情绪标签 + 行为记录”的情绪日历，帮助用户理解情绪与行为的关系，让产品从一次性对话延展为可持续的自我观察工具。",
+        title: "03 / Agent strategy",
+        body: "针对用户既可能“只想被听见”，也可能“希望得到行动建议”的差异化诉求，构建倾听型与指导型两类 Agent。基于 Few-Shot 与 RAG 调试 System Prompt，约束回应语气、建议颗粒度与知识范围，让陪伴更自然，也让指导更具上下文依据。",
       },
       {
-        title: "04 / Outcome & reflection",
-        body: "基于 Uniapp 与 LLM API 完成流式对话和数据可视化 MVP，并获得赛事三等奖。下一版需要补充安全边界、危机干预与长期留存验证。",
+        title: "04 / Product structure",
+        body: "围绕“感知—表达—理解—回看”设计产品结构：通过情绪自测和标签记录当下状态，以 AI 流式对话承接表达，再用情绪日记、对话历史和“情绪—行为归因日历”帮助用户观察长期变化。可视化面板将每日情绪、AI 对话与评估结果汇总为可回顾的个人记录。",
+      },
+      {
+        title: "05 / MVP & outcome",
+        body: "最终基于 Uniapp + LLM API 完成包含流式对话、情绪记录、对话历史与可视化面板的 MVP，验证高校情绪陪伴场景的产品与技术可行性，并获得大赛三等奖。后续迭代重点将放在危机干预边界、专业内容审核和长期使用效果验证。",
       },
     ],
-    tags: ["User Research", "AI Agent", "Uniapp", "LLM API"],
+    tags: ["0→1 Product", "User Research", "Few-Shot", "RAG", "Uniapp", "LLM API"],
   },
   "next-project": {
     kind: "project",
