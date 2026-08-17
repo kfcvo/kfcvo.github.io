@@ -12,11 +12,6 @@ const internships = [
     title: "轻量化“区块链 + AI”企业级存证与侵权追踪平台",
     summary: "负责企业级文件存证与 AI 侵权追踪平台的需求分析、方案设计和 MVP 交付，支持 SaaS 及私有化部署。",
     facts: ["10+ 模块 PRD", "Demo → MVP / 1 个月", "SaaS & 私有化"],
-    outputs: [
-      ["10+", "模块 PRD 与交互规范"],
-      ["1 个月", "Demo 推进至 MVP"],
-      ["双形态", "SaaS 与私有化部署"],
-    ],
     tone: "mint",
     star: {
       Situation: "企业文件跨机构流转中存在泄密、举证困难和侵权识别成本高等问题；长文档直接调用 LLM 还容易产生幻觉、特征遗漏与证据定位困难。",
@@ -35,11 +30,6 @@ const internships = [
     title: "海外 Roguelike 射击塔防 RPG 从 0 到 1 付费测试",
     summary: "参与一款海外割草 Roguelike 射击塔防 RPG 手游从 0 到 1 的付费测试全流程运营。",
     facts: ["购买转化 +12%", "内容制作 4h → 1.5h", "200+ 用户反馈"],
-    outputs: [
-      ["+12%", "核心礼包购买转化"],
-      ["1.5h", "单篇内容制作周期"],
-      ["200+", "海外玩家反馈分析"],
-    ],
     tone: "sky",
     star: {
       Situation: "付费测试初期，用户主动充值意愿不足，海外社群宣发需求高频且内容生产耗时；同时玩家反馈分散，早期流失原因难以定位。",
@@ -52,16 +42,16 @@ const internships = [
 
 function CompanyVisual({ item }: { item: (typeof internships)[number] }) {
   return (
-    <div className={`project-visual company-visual company-visual-${item.tone}`} aria-label={`${item.company}主要产出`}>
+    <div className={`project-visual company-visual company-visual-${item.tone}`} aria-label={`${item.company}公司与项目信息`}>
       <span className="visual-index">INTERNSHIP / {item.index}</span>
       <div className="company-card">
         <p className="eyebrow">INTERNSHIP COMPANY</p>
         <h2>{item.company}</h2>
         <div className="company-role"><span>{item.role}</span><span>{item.period}</span></div>
-        <p className="output-label">主要产出 / KEY OUTPUTS</p>
-        <div className="output-grid">
-          {item.outputs.map(([value, label]) => <article key={label}><strong>{value}</strong><span>{label}</span></article>)}
-        </div>
+        <dl className="company-context">
+          <div><dt>公司背景 / COMPANY</dt><dd>{item.background}</dd></div>
+          <div><dt>核心项目 / CORE PROJECT</dt><dd>{item.summary}</dd></div>
+        </dl>
       </div>
     </div>
   );
@@ -84,10 +74,6 @@ export default function InternWorksPage() {
               <div className="featured-copy">
                 <p className="eyebrow">{item.eyebrow}</p>
                 <h2>{item.title}</h2>
-                <dl className="intern-context">
-                  <div><dt>公司背景 / COMPANY</dt><dd>{item.background}</dd></div>
-                  <div><dt>核心项目 / CORE PROJECT</dt><dd>{item.summary}</dd></div>
-                </dl>
                 <ul>{item.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
                 <div className="inline-accordion" aria-label={`${item.company} STAR 项目复盘`}>
                   {Object.entries(item.star).map(([label, body], index) => (
