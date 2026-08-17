@@ -5,23 +5,24 @@ const internships = [
   {
     index: "01",
     company: "中关村科金",
-    role: "区块链产品经理",
-    period: "2026.05 — 至今",
+    role: "产品经理（AI / 区块链方向）",
+    period: "2026.05 — 2026.08",
     eyebrow: "ENTERPRISE AI × BLOCKCHAIN",
-    title: "企业级存证与侵权追踪平台",
-    summary: "在隐私、公信力与交付周期的多重约束下，将区块链与 AI 能力整理成一条可信、可执行的企业产品链路。",
-    facts: ["10+ 模块 PRD", "Demo → MVP / 1 个月", "Token 成本 -60%+"],
+    background: "企业级大模型及智能交互解决方案服务商",
+    title: "轻量化“区块链 + AI”企业级存证与侵权追踪平台",
+    summary: "负责企业级文件存证与 AI 侵权追踪平台的需求分析、方案设计和 MVP 交付，支持 SaaS 及私有化部署。",
+    facts: ["10+ 模块 PRD", "Demo → MVP / 1 个月", "SaaS & 私有化"],
     outputs: [
       ["10+", "模块 PRD 与交互规范"],
       ["1 个月", "Demo 推进至 MVP"],
-      ["-60%+", "累计 Token 成本"],
+      ["双形态", "SaaS 与私有化部署"],
     ],
     tone: "mint",
     star: {
-      Situation: "企业关键文件跨机构流转时，存在敏感信息泄露、举证困难和二次改写难识别等问题；通用大模型在长文档分析中也容易出现证据定位错误。",
-      Task: "参与定义隐私友好的企业存证与侵权追踪平台，把区块链、AI 与合规约束翻译成用户可理解、团队可交付的产品流程。",
-      Action: "独立完成 10+ 模块 PRD 与交互规范，梳理本地摘要、双链核验、Evidence Card 与 Claim Graph；推动限域 RAG、Validator 自动重试和 50+ 案例 Golden 测试集。",
-      Result: "支持产品在一个月内由 Demo 迭代至 MVP，并通过内部评审与种子客户验收；复杂分析场景累计 Token 成本下降 60%+。",
+      Situation: "企业文件跨机构流转中存在泄密、举证困难和侵权识别成本高等问题；长文档直接调用 LLM 还容易产生幻觉、特征遗漏与证据定位困难。",
+      Task: "参与规划“本地摘要存证—双链核验—AI 侵权追踪”完整业务链路，并负责平台需求分析、方案设计与 MVP 交付。",
+      Action: "协同架构团队完成司法链与公链的双链存证方案；设计“短文档直连模型、复杂案件 RAG 限域检索”的分级策略，并用 Claim Graph、JSON Schema 与证据卡片提升结论可追溯性。独立输出 10+ 模块 PRD、流程图及交互规范，协调研发、设计和测试处理需求变更。",
+      Result: "1 个月内推动产品由 Demo 迭代至 MVP，并完成内部评审与种子客户验收，形成支持 SaaS 与私有化部署的企业级解决方案。",
     },
   },
   {
@@ -30,8 +31,9 @@ const internships = [
     role: "游戏产品运营",
     period: "2024.12 — 2025.04",
     eyebrow: "GLOBAL GAME OPERATIONS",
-    title: "海外游戏从 0 到 1 付费测试",
-    summary: "用转化漏斗、AIGC 内容工作流和 200+ 条玩家反馈，找到影响商业化与新手体验的关键节点。",
+    background: "全球化游戏研发与发行公司，主要覆盖 SLG、RPG 等品类",
+    title: "海外 Roguelike 射击塔防 RPG 从 0 到 1 付费测试",
+    summary: "参与一款海外割草 Roguelike 射击塔防 RPG 手游从 0 到 1 的付费测试全流程运营。",
     facts: ["购买转化 +12%", "内容制作 4h → 1.5h", "200+ 用户反馈"],
     outputs: [
       ["+12%", "核心礼包购买转化"],
@@ -40,10 +42,10 @@ const internships = [
     ],
     tone: "sky",
     star: {
-      Situation: "海外 Roguelike 游戏付费测试初期，商店曝光到购买之间存在明显断点，同时社群反馈分散、宣发内容生产成本高。",
-      Task: "定位商业化与早期体验中的关键问题，建立能够快速验证付费触发、内容效率与用户反馈的运营方法。",
-      Action: "搭建商店曝光—关卡通关—付费触发漏斗，调整礼包出现时机；建立 AIGC Prompt 与审核 SOP，并使用 Python 分析 200+ 条 Discord 玩家反馈。",
-      Result: "核心礼包购买转化率提升约 12%，单篇内容制作时间由 4 小时缩短至 1.5 小时，并推动新手引导、难度曲线与资源节奏优化。",
+      Situation: "付费测试初期，用户主动充值意愿不足，海外社群宣发需求高频且内容生产耗时；同时玩家反馈分散，早期流失原因难以定位。",
+      Task: "围绕商业化转化、AIGC 内容效率和海外用户洞察，参与产品从 0 到 1 付费测试的全流程运营。",
+      Action: "搭建“商店曝光—关卡通关—付费触发”转化漏斗并设计场景化触发机制；构建结构化 Prompt 模板、视觉素材库与内容 SOP；搭建 Discord 社群，并用 Python 深度分析 200+ 条玩家反馈。",
+      Result: "核心礼包购买转化率提升约 12%；单篇内容制作周期由 4 小时压缩至 1.5 小时并产出 20+ 篇海外宣发内容；推动优化新手引导、难度曲线与资源投放，将付费卡点后移至高粘性周期。",
     },
   },
 ];
@@ -82,7 +84,10 @@ export default function InternWorksPage() {
               <div className="featured-copy">
                 <p className="eyebrow">{item.eyebrow}</p>
                 <h2>{item.title}</h2>
-                <p>{item.summary}</p>
+                <dl className="intern-context">
+                  <div><dt>公司背景 / COMPANY</dt><dd>{item.background}</dd></div>
+                  <div><dt>核心项目 / CORE PROJECT</dt><dd>{item.summary}</dd></div>
+                </dl>
                 <ul>{item.facts.map((fact) => <li key={fact}>{fact}</li>)}</ul>
                 <div className="inline-accordion" aria-label={`${item.company} STAR 项目复盘`}>
                   {Object.entries(item.star).map(([label, body], index) => (

@@ -120,6 +120,7 @@ export type InternCase = {
   role: string;
   period: string;
   sector: string;
+  background: string;
   summary: string;
   works: StarItem[];
 };
@@ -127,11 +128,12 @@ export type InternCase = {
 export const internCases: Record<string, InternCase> = {
   "zhongguancun-kejin": {
     company: "中关村科金",
-    role: "区块链产品经理",
-    period: "2026.05 — 至今",
+    role: "产品经理（AI / 区块链方向）",
+    period: "2026.05 — 2026.08",
     sector: "ENTERPRISE AI × BLOCKCHAIN",
+    background: "企业级大模型及智能交互解决方案服务商",
     summary:
-      "参与轻量化企业级存证与侵权追踪平台，从安全架构、AI 方案到 PRD 与交付验证，推动产品在一个月内由 Demo 迭代至 MVP。",
+      "负责轻量化“区块链 + AI”企业级存证与侵权追踪平台的需求分析、方案设计和 MVP 交付，支持 SaaS 及私有化部署。",
     works: [
       {
         number: "01",
@@ -142,13 +144,13 @@ export const internCases: Record<string, InternCase> = {
         tags: ["Product Definition", "User Flow", "PRD"],
         star: {
           situation:
-            "企业关键文件在跨机构流转时存在举证困难、明文泄露风险和二次改写难识别等问题。",
+            "企业关键文件在跨机构流转时存在泄密、举证困难和侵权识别成本高等问题。",
           task:
-            "参与定义面向企业客户的存证工作台，并梳理文件从本地处理到核验与追踪的完整路径。",
+            "参与规划“本地摘要存证—双链核验—AI 侵权追踪”完整业务链路，并负责平台需求分析与方案设计。",
           action:
-            "将需求拆解为本地摘要、双链印证、核验与 AI 侵权追踪等模块；配合架构师明确边界，并将交互和异常状态沉淀为产品规范。",
+            "将需求拆解为本地摘要、双链印证、核验与 AI 侵权追踪等模块；协同架构团队明确产品边界，并将交互和异常状态沉淀为产品规范。",
           result:
-            "形成可评审的工作台方案与模块化需求，为 Demo 到 MVP 的迭代建立统一产品结构。",
+            "形成可评审的工作台方案与模块化需求，为支持 SaaS 与私有化部署的 MVP 建立统一产品结构。",
         },
       },
       {
@@ -164,7 +166,7 @@ export const internCases: Record<string, InternCase> = {
           task:
             "参与存证核验链路设计，帮助团队把技术约束翻译为用户可理解、可操作的产品流程。",
           action:
-            "设计本地 Hash 与摘要存证逻辑，并协同梳理腾讯至信链与以太坊主链的双链交互、状态反馈和失败处理。",
+            "设计本地 Hash 与摘要存证逻辑，并协同架构团队完成司法链与公链的双链存证方案、状态反馈和失败处理。",
           result:
             "完成兼顾隐私与公信力的核心链路设计，为后续界面原型和接口协作提供依据。",
         },
@@ -172,7 +174,7 @@ export const internCases: Record<string, InternCase> = {
       {
         number: "03",
         title: "AI 专利 / 侵权追踪",
-        outcome: "用限域检索、证据卡片与校验器降低幻觉和页面定位错误，累计 Token 成本下降 60%+。",
+        outcome: "用分级处理、RAG 限域检索与结构化证据卡片降低幻觉、特征遗漏和证据定位困难。",
         visual: "Evidence card",
         visualNote: "Evidence Card / Claim Graph 截图待替换",
         tags: ["RAG", "Evaluation", "AI Product"],
@@ -182,9 +184,9 @@ export const internCases: Record<string, InternCase> = {
           task:
             "参与制定更稳定的侵权分析方案，并建立能够验证抽取与检索质量的评估方法。",
           action:
-            "推动“小体量直连 + 复杂案件 RAG 限域”的混合架构；设计分层 JSON Schema、Claim Graph 与 Evidence Card；搭建 50+ 案例 Golden 测试集，并加入 Validator 自动重试与坐标回查。",
+            "设计“短文档直连模型、复杂案件 RAG 限域检索”的分级策略，并通过 Claim Graph、JSON Schema 和证据卡片提升结论可追溯性。",
           result:
-            "支持法务一键回到原文证据位置，并降低 60%+ 累计 Token 成本；其余效果指标待项目数据补充。",
+            "让分析结论能够关联具体主张、结构化字段与原文证据位置，提升复杂案件结果的可解释性与复核效率。",
         },
       },
       {
@@ -200,7 +202,7 @@ export const internCases: Record<string, InternCase> = {
           task:
             "建立清晰的需求口径与变更机制，保障核心范围按期进入可验收状态。",
           action:
-            "独立撰写 10+ 模块 PRD 和交互规范，对接前后端与 UI；维护变更记录、优先级和验收标准。",
+            "独立输出 10+ 模块 PRD、流程图及交互规范，协调研发、设计和测试处理需求变更，并维护优先级与验收标准。",
           result:
             "项目在一个月内完成 Demo 到 MVP 的迭代，并通过内部评审与种子客户验收。",
         },
@@ -212,8 +214,9 @@ export const internCases: Record<string, InternCase> = {
     role: "游戏产品运营",
     period: "2024.12 — 2025.04",
     sector: "GLOBAL GAME OPERATIONS",
+    background: "全球化游戏研发与发行公司，主要覆盖 SLG、RPG 等品类",
     summary:
-      "参与海外 Roguelike 射击塔防 RPG 从 0 到 1 的付费测试，以转化漏斗、AIGC 内容流程与用户反馈分析支持商业化和早期体验优化。",
+      "参与一款海外割草 Roguelike 射击塔防 RPG 手游从 0 到 1 的付费测试全流程运营。",
     works: [
       {
         number: "01",
@@ -228,7 +231,7 @@ export const internCases: Record<string, InternCase> = {
           task:
             "定位转化卡点，并设计更贴近游戏场景的付费触发方式。",
           action:
-            "搭建“商店曝光—关卡通关—付费触发”漏斗，结合关键关卡和资源缺口调整礼包出现时机，缩短用户决策路径。",
+            "搭建“商店曝光—关卡通关—付费触发”转化漏斗，协助定位礼包购买路径中的卡点；结合关键关卡和资源缺口设计场景化付费触发机制，缩短用户决策路径。",
           result: "方案上线后，核心礼包购买转化率提升约 12%。",
         },
       },
@@ -245,7 +248,7 @@ export const internCases: Record<string, InternCase> = {
           task:
             "搭建能够被团队复用的 AIGC 素材生产流程。",
           action:
-            "引入 AIGC 工具，整理结构化 Prompt 模板、视觉素材库和审核步骤，将创作方法沉淀为 SOP。",
+            "主导引入 AIGC 工具，构建结构化 Prompt 模板、视觉素材库和审核步骤，将创作方法沉淀为可复用 SOP。",
           result:
             "单篇内容制作时间由 4 小时降至 1.5 小时，并在预热期产出 20+ 篇海外宣发内容。",
         },
@@ -263,9 +266,9 @@ export const internCases: Record<string, InternCase> = {
           task:
             "建立社群反馈收集与分析方法，找出影响前期体验的主要问题。",
           action:
-            "搭建 Discord 社群结构，并使用 Python 分析 200+ 条反馈，定位主线难度陡峭和前期资源投放不足两类问题，输出数值与引导优化建议。",
+            "搭建 Discord 海外社群架构，并使用 Python 深度分析 200+ 条反馈，定位“主线难度曲线陡峭”与“前期资源投放不足”两类问题，输出产品优化方案与数值迭代文档。",
           result:
-            "推动新手引导与资源节奏调整，在保障次日留存的同时将付费卡点后移至更高粘性阶段；详细数据待补充。",
+            "推动优化新手引导、难度曲线与资源投放，在保障次日留存率的同时将付费卡点后移至更高粘性阶段。",
         },
       },
     ],

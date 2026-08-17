@@ -20,7 +20,8 @@ export function InternCaseStudy({ data }: { data: InternCase }) {
         <div>
           <p className="eyebrow">{data.sector}</p>
           <h1>{data.company}</h1>
-          <p>{data.summary}</p>
+          <p className="intern-summary">{data.summary}</p>
+          <p className="intern-background"><span>COMPANY PROFILE</span>{data.background}</p>
         </div>
         <dl>
           <div><dt>ROLE</dt><dd>{data.role}</dd></div>
