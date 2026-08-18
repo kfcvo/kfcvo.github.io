@@ -9,9 +9,9 @@ const capabilities = [
 ];
 
 const portraitPanels = [
-  { className: "fold-left", src: "/about-graduation.jpg", width: 1280, height: 1920 },
-  { className: "fold-center", src: "/about-changi.jpg", width: 1350, height: 1800 },
-  { className: "fold-right", src: "/about-egypt.jpg", width: 1312, height: 1800 },
+  { className: "stack-graduation", src: "/about-graduation.jpg", width: 1280, height: 1920, alt: "陈知雨毕业照" },
+  { className: "stack-changi", src: "/about-changi.jpg", width: 1350, height: 1800, alt: "陈知雨在樟宜村的照片" },
+  { className: "stack-egypt", src: "/about-egypt.jpg", width: 1312, height: 1800, alt: "陈知雨在埃及主题场景的照片" },
 ];
 
 export default function AboutPage() {
@@ -25,11 +25,11 @@ export default function AboutPage() {
           <p className="about-name-en">CHEN ZHIYU · ZHIRAIN</p>
         </div>
         <figure className="about-portrait">
-          <div className="portrait-fold" role="img" aria-label="陈知雨的毕业与旅行照片组合">
+          <div className="portrait-stack" aria-label="陈知雨的毕业与旅行照片组合">
             {portraitPanels.map((panel) => (
-              <span className={`portrait-fold-panel ${panel.className}`} key={panel.src}>
+              <button className={`portrait-card ${panel.className}`} key={panel.src} type="button" aria-label={`将${panel.alt}移到前面`}>
                 <Image src={panel.src} alt="" width={panel.width} height={panel.height} priority unoptimized />
-              </span>
+              </button>
             ))}
           </div>
           <figcaption><span>CHEN ZHIYU</span><span>SINGAPORE / BEIJING</span></figcaption>

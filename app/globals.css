@@ -508,21 +508,19 @@ img { display: block; max-width: 100%; }
 .about-hero { display: grid; grid-template-columns: 1.25fr .75fr; align-items: center; gap: clamp(70px, 10vw, 160px); width: min(1280px, calc(100% - 44px)); min-height: 720px; margin: 30px auto 120px; }
 .about-title h1 { margin: 30px 0 24px; font-family: "Songti SC", STSong, Georgia, serif; font-size: clamp(86px, 10vw, 148px); font-weight: 400; letter-spacing: -.09em; line-height: .92; }
 .about-name-en { margin: 0; color: #4e5853; font-size: 9px; font-weight: 700; letter-spacing: .22em; }
-.about-portrait { width: min(350px, 100%); margin: 0 auto; }
-.portrait-fold { display: flex; width: 100%; aspect-ratio: 2 / 3; perspective: 1100px; filter: drop-shadow(16px 22px 24px rgba(32,48,40,.16)); }
-.portrait-fold-panel { position: relative; width: 33.333%; height: 100%; overflow: hidden; background: #dce7dd; transform-style: preserve-3d; }
-.portrait-fold-panel img { position: absolute; inset: 0; width: 100%; max-width: none; height: 100%; object-fit: cover; filter: saturate(.86) contrast(.97); transition: transform 520ms cubic-bezier(.2,.7,.2,1); }
-.fold-left img { object-position: 63% center; }
-.fold-center img { object-position: 50% center; }
-.fold-right img { object-position: 51% center; }
-.fold-left { z-index: 1; transform: rotateY(7deg); transform-origin: right center; }
-.fold-center { z-index: 2; transform: rotateY(-7deg); transform-origin: left center; box-shadow: inset 12px 0 16px rgba(24,38,31,.12), inset -10px 0 14px rgba(255,255,255,.12); }
-.fold-right { z-index: 1; transform: rotateY(6deg); transform-origin: left center; box-shadow: inset 10px 0 16px rgba(24,38,31,.12); }
+.about-portrait { width: min(390px, 100%); margin: 0 auto; }
+.portrait-stack { position: relative; width: 100%; aspect-ratio: .78; isolation: isolate; }
+.portrait-card { position: absolute; top: 5%; left: 12%; width: 76%; height: 88%; padding: 0; overflow: hidden; border: 7px solid #f5f6f1; border-radius: 3px; background: #dce7dd; cursor: pointer; box-shadow: 0 18px 42px rgba(32,48,40,.18); transition: z-index 0s, transform 460ms cubic-bezier(.2,.75,.2,1), box-shadow 460ms ease; }
+.portrait-card img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.86) contrast(.97); transition: transform 460ms cubic-bezier(.2,.75,.2,1); }
+.stack-graduation { z-index: 3; transform: translate(0,0) rotate(-1.5deg); }
+.stack-graduation img { object-position: 61% center; }
+.stack-changi { z-index: 2; transform: translate(-18%,5%) rotate(-7deg); }
+.stack-changi img { object-position: 50% center; }
+.stack-egypt { z-index: 1; transform: translate(19%,7%) rotate(7deg); }
+.stack-egypt img { object-position: 51% center; }
+.portrait-card:hover,.portrait-card:focus-visible { z-index: 20; transform: translate(0,-4%) rotate(0) scale(1.045); box-shadow: 0 28px 58px rgba(32,48,40,.25); outline: none; }
+.portrait-card:hover img,.portrait-card:focus-visible img { transform: scale(1.018); }
 .about-portrait figcaption{display:flex;justify-content:space-between;margin-top:30px;font-size:8px;font-weight:700;letter-spacing:.12em}
-
-@media (hover: hover) {
-  .portrait-fold:hover .portrait-fold-panel img { transform: scale(1.025); }
-}
 .about-manifesto { width: min(1100px, calc(100% - 44px)); margin: 0 auto; padding: 130px 0; border-top: 1px solid var(--ink); text-align: center; }.about-manifesto blockquote{margin:34px auto 0;font-family:Georgia,"Songti SC",serif;font-size:clamp(34px,4.4vw,62px);font-weight:400;line-height:1.5}
 .about-journey,.capability-section{width:min(1200px,calc(100% - 44px));margin:80px auto 170px}.about-journey .section-heading,.capability-section .section-heading{grid-template-columns:.7fr 1.3fr}.timeline{margin-top:80px;border-top:1px solid var(--ink)}.timeline article{display:grid;grid-template-columns:220px 70px 1fr;align-items:center;min-height:150px;border-bottom:1px solid var(--line)}.timeline time{color:var(--muted);font-size:10px}.timeline article>span{font-family:Georgia,serif;font-size:22px}.timeline h3{margin:0;font-family:Georgia,"Songti SC",serif;font-size:34px;font-weight:400}.timeline p{margin:10px 0 0;color:var(--muted);font-size:12px}
 .capability-list{margin-top:80px;border-top:1px solid var(--ink)}.capability-list article{display:grid;grid-template-columns:100px 1fr 1.2fr;align-items:center;min-height:130px;border-bottom:1px solid var(--line)}.capability-list article>span{font-size:9px;font-weight:700}.capability-list h3{margin:0;font-family:Georgia,serif;font-size:35px;font-weight:400}.capability-list p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
