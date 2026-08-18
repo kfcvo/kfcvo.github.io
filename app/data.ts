@@ -377,8 +377,8 @@ export const standardCases: Record<string, StandardCase> = {
     sections: [
       { title: "01 / Background", body: "项目源于区块链课程对智能合约和去中心化交易流程的实践要求。我选择银行操作作为载体，将抽象的地址、合约调用和交易确认转化为更熟悉的存款与转账任务。" },
       { title: "02 / Core flow", body: "系统围绕四个基础能力展开：账户地址输入、资金存入、地址间转账和操作日志。用户完成表单后可以查看最近一笔交易记录，理解付款方、收款方、金额与交易状态之间的关系。" },
-      { title: "03 / Contract experiment", body: "智能合约使用 Solidity 在 Remix IDE 中编写，并在 Ethereum Sepolia 测试网上完成课程实验。项目重点是理解前端操作、合约方法和测试网交易之间的连接，而不是将原型包装为生产级金融系统。" },
-      { title: "04 / Deployment & reflection", body: "Web 应用部署于 Render，原始版本目前仍可访问。由于历史合约源码未完整保留，作品集内的演示采用固定测试数据重建交互，同时保留原始部署与 GitHub 链接，明确区分历史实现和当前展示。" },
+      { title: "03 / Contract experiment", body: "智能合约使用 Solidity 在 Remix IDE 中编写，历史截图保留了 transfer.sol 与 deposit.sol 两个实验文件；其中 transfer_money(...) 写入付款方、收款方与金额，check_transaction() 用于回读交易数据。项目重点是理解前端操作、合约方法和测试网交易之间的连接。" },
+      { title: "04 / Deployment & reflection", body: "Web 应用部署于 Render，原始版本目前仍可访问。Etherscan 与 MetaMask 的历史记录保留了 Sepolia 测试网交易成功、账户确认和交易哈希等验证证据；作品集通过原始界面、合约截图与链上结果串联项目过程。" },
     ],
     tags: ["Solidity", "Remix IDE", "Sepolia", "Web Prototype", "Render"],
     links: [

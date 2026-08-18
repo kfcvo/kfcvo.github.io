@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type StandardCase } from "../data";
+import { ChainBankStory } from "./ChainBankStory";
 import { ExperienceDemo } from "./ExperienceDemo";
 
 function CaseHeroVisual({ data }: { data: StandardCase }) {
@@ -29,7 +30,7 @@ function CaseHeroVisual({ data }: { data: StandardCase }) {
 }
 
 export function StandardCaseStudy({ data, slug }: { data: StandardCase; slug: string }) {
-  const hasDemo = slug === "company-info-check" || slug === "chainbank";
+  const hasDemo = slug === "company-info-check";
   return (
     <article className="case-study">
       <header className="case-hero">
@@ -52,8 +53,8 @@ export function StandardCaseStudy({ data, slug }: { data: StandardCase; slug: st
         <section className="case-demo-section" id="interactive-demo">
           <header>
             <p className="eyebrow">INTERACTIVE RECONSTRUCTION</p>
-            <h2>{slug === "chainbank" ? "体验一次测试网交易路径" : "从划选公司到投递判断"}</h2>
-            <p>{slug === "chainbank" ? "使用固定测试数据重建原始核心流程，不连接钱包，也不会发起真实链上交易。" : "点击不同公司，观察浏览器上下文如何被整理为可扫描、可核验的公司报告。"}</p>
+            <h2>从划选公司到投递判断</h2>
+            <p>点击不同公司，观察浏览器上下文如何被整理为可扫描、可核验的公司报告。</p>
           </header>
           <ExperienceDemo slug={slug} />
         </section>
@@ -71,20 +72,16 @@ export function StandardCaseStudy({ data, slug }: { data: StandardCase; slug: st
         </div>
       </section>
 
-      <section className="case-chapters" aria-label="项目过程">
-        {data.sections.map((section, index) => (
-          <article key={section.title}>
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <div><h2>{section.title.replace(/^\d+ \/ /, "")}</h2><p>{section.body}</p></div>
-          </article>
-        ))}
-      </section>
-
-      {slug === "chainbank" && (
-        <section className="case-archive-gallery" aria-label="ChainBank 原始项目截图">
-          <header><p className="eyebrow">ORIGINAL PROTOTYPE / 2026</p><h2>保留历史实现，重建可体验的叙事。</h2></header>
-          <figure><Image src="/ai/chainbank-transfer.png" alt="ChainBank 原始转账页面" width={984} height={1400} unoptimized /><figcaption>TRANSFER MONEY / ORIGINAL SCREEN</figcaption></figure>
-          <figure><Image src="/ai/chainbank-deposit.png" alt="ChainBank 原始存款页面" width={984} height={1214} unoptimized /><figcaption>DEPOSIT MONEY / ORIGINAL SCREEN</figcaption></figure>
+      {slug === "chainbank" ? (
+        <ChainBankStory sections={data.sections} />
+      ) : (
+        <section className="case-chapters" aria-label="项目过程">
+          {data.sections.map((section, index) => (
+            <article key={section.title}>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <div><h2>{section.title.replace(/^\d+ \/ /, "")}</h2><p>{section.body}</p></div>
+            </article>
+          ))}
         </section>
       )}
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ResearchCompany = "MiniMax" | "字节跳动" | "小红书";
 
@@ -114,140 +114,7 @@ function CompanyInfoCheckDemo() {
   );
 }
 
-type BankTab = "overview" | "transfer" | "deposit" | "logs";
-type BankTransaction = { id: string; type: "TRANSFER" | "DEPOSIT"; from: string; to: string; amount: number; time: string };
-
-const samplePayer = "0xb0EC1EC73f4Eb7bD4fF617D3d512AC8523564ffC";
-const samplePayee = "0x71eA40eA4F7c26A94b513DD4e68EC0dA2086Bc19";
-
-function shortenAddress(value: string) {
-  if (value.length < 18) return value;
-  return `${value.slice(0, 8)}…${value.slice(-6)}`;
-}
-
-function ChainBankDemo() {
-  const [tab, setTab] = useState<BankTab>("overview");
-  const [balance, setBalance] = useState(12840);
-  const [status, setStatus] = useState<"idle" | "validating" | "confirmed">("idle");
-  const [payer, setPayer] = useState(samplePayer);
-  const [payee, setPayee] = useState(samplePayee);
-  const [amount, setAmount] = useState("100");
-  const [depositor, setDepositor] = useState(samplePayer);
-  const [depositAmount, setDepositAmount] = useState("10");
-  const [transactions, setTransactions] = useState<BankTransaction[]>([
-    { id: "0x8a71…3f92", type: "TRANSFER", from: samplePayer, to: samplePayee, amount: 100, time: "10:42" },
-    { id: "0x2c19…a540", type: "DEPOSIT", from: samplePayer, to: "CHAINBANK", amount: 10, time: "10:36" },
-  ]);
-  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  useEffect(() => () => {
-    if (timer.current) clearTimeout(timer.current);
-  }, []);
-
-  const complete = (transaction: BankTransaction, change: number) => {
-    if (timer.current) clearTimeout(timer.current);
-    setStatus("validating");
-    timer.current = setTimeout(() => {
-      setTransactions((current) => [transaction, ...current].slice(0, 5));
-      setBalance((current) => current + change);
-      setStatus("confirmed");
-    }, 900);
-  };
-
-  const submitTransfer = (event: FormEvent) => {
-    event.preventDefault();
-    const value = Number(amount) || 0;
-    complete({ id: "0xd831…7a20", type: "TRANSFER", from: payer, to: payee, amount: value, time: "NOW" }, -value);
-  };
-
-  const submitDeposit = (event: FormEvent) => {
-    event.preventDefault();
-    const value = Number(depositAmount) || 0;
-    complete({ id: "0x4f20…91bc", type: "DEPOSIT", from: depositor, to: "CHAINBANK", amount: value, time: "NOW" }, value);
-  };
-
-  const changeTab = (next: BankTab) => {
-    setTab(next);
-    setStatus("idle");
-  };
-
-  return (
-    <div className="chainbank-demo">
-      <aside className="bank-sidebar">
-        <div className="bank-brand"><span>CB</span><b>CHAINBANK</b></div>
-        <nav aria-label="ChainBank 演示功能">
-          <button className={tab === "overview" ? "active" : ""} onClick={() => changeTab("overview")} type="button"><span>01</span>Overview</button>
-          <button className={tab === "transfer" ? "active" : ""} onClick={() => changeTab("transfer")} type="button"><span>02</span>Transfer</button>
-          <button className={tab === "deposit" ? "active" : ""} onClick={() => changeTab("deposit")} type="button"><span>03</span>Deposit</button>
-          <button className={tab === "logs" ? "active" : ""} onClick={() => changeTab("logs")} type="button"><span>04</span>Logs</button>
-        </nav>
-        <div className="bank-network"><i />SEPOLIA TESTNET<small>RECONSTRUCTED DEMO</small></div>
-      </aside>
-
-      <div className="bank-screen">
-        <header><div><small>SECURE BANKING MANAGEMENT / 2026</small><h3>{tab === "overview" ? "Account overview" : tab === "transfer" ? "Transfer money" : tab === "deposit" ? "Deposit funds" : "Transaction logs"}</h3></div><span>● CONNECTED</span></header>
-
-        {tab === "overview" && (
-          <div className="bank-overview">
-            <section className="bank-balance"><small>DEMO BALANCE</small><strong>{balance.toLocaleString()}<span> TEST</span></strong><p>{shortenAddress(samplePayer)}</p></section>
-            <div className="bank-actions"><button onClick={() => changeTab("transfer")} type="button"><span>TRANSFER</span><b>Send funds between addresses</b><i>↗</i></button><button onClick={() => changeTab("deposit")} type="button"><span>DEPOSIT</span><b>Add funds to an account</b><i>↗</i></button></div>
-            <TransactionTable transactions={transactions.slice(0, 2)} />
-          </div>
-        )}
-
-        {tab === "transfer" && (
-          <form className="bank-form" onSubmit={submitTransfer}>
-            <label>From / Payer address<input onChange={(event) => setPayer(event.target.value)} value={payer} /></label>
-            <label>To / Payee address<input onChange={(event) => setPayee(event.target.value)} value={payee} /></label>
-            <label>Amount<input min="1" onChange={(event) => setAmount(event.target.value)} type="number" value={amount} /></label>
-            <button disabled={status === "validating"} type="submit">{status === "validating" ? "VALIDATING ON TESTNET…" : "CONFIRM TRANSFER"}</button>
-            <BankStatus status={status} transaction={transactions[0]} />
-          </form>
-        )}
-
-        {tab === "deposit" && (
-          <form className="bank-form" onSubmit={submitDeposit}>
-            <label>Depositor address<input onChange={(event) => setDepositor(event.target.value)} value={depositor} /></label>
-            <label>Deposit amount<input min="1" onChange={(event) => setDepositAmount(event.target.value)} type="number" value={depositAmount} /></label>
-            <button disabled={status === "validating"} type="submit">{status === "validating" ? "VALIDATING ON TESTNET…" : "CONFIRM DEPOSIT"}</button>
-            <BankStatus status={status} transaction={transactions[0]} />
-          </form>
-        )}
-
-        {tab === "logs" && <TransactionTable transactions={transactions} />}
-      </div>
-    </div>
-  );
-}
-
-function BankStatus({ status, transaction }: { status: "idle" | "validating" | "confirmed"; transaction: BankTransaction }) {
-  if (status === "idle") return <p className="bank-form-note">This portfolio demo uses fixed test data and does not submit a blockchain transaction.</p>;
-  return (
-    <div className={`bank-status bank-status-${status}`} aria-live="polite">
-      <span>{status === "confirmed" ? "✓" : "…"}</span>
-      <div><b>{status === "confirmed" ? "Transaction confirmed" : "Validating transaction"}</b><p>{status === "confirmed" ? `${transaction.id} · Sepolia testnet simulation` : "Checking addresses and preparing the contract call."}</p></div>
-    </div>
-  );
-}
-
-function TransactionTable({ transactions }: { transactions: BankTransaction[] }) {
-  return (
-    <section className="bank-transactions">
-      <div className="bank-table-heading"><b>RECENT TRANSACTIONS</b><span>STATUS</span></div>
-      {transactions.map((item, index) => (
-        <div className="bank-transaction" key={`${item.id}-${index}`}>
-          <span>{item.type.slice(0, 1)}</span>
-          <div><b>{item.type === "TRANSFER" ? `${shortenAddress(item.from)} → ${shortenAddress(item.to)}` : `Deposit to ${shortenAddress(item.from)}`}</b><small>{item.id} · {item.time}</small></div>
-          <strong>{item.type === "TRANSFER" ? "−" : "+"}{item.amount}</strong>
-          <i>CONFIRMED</i>
-        </div>
-      ))}
-    </section>
-  );
-}
-
 export function ExperienceDemo({ slug }: { slug: string }) {
   if (slug === "company-info-check") return <CompanyInfoCheckDemo />;
-  if (slug === "chainbank") return <ChainBankDemo />;
   return null;
 }
