@@ -17,7 +17,7 @@ export default function AboutPage() {
           <p className="eyebrow">ABOUT / 陈知雨</p>
         </div>
         <figure className="about-portrait">
-          <div className="portrait-frame"><Image src="/portrait.png" alt="陈知雨个人照片" width={323} height={388} priority unoptimized /></div>
+          <div className="portrait-frame"><Image src="/about-graduation.jpg" alt="陈知雨毕业照" width={1280} height={1920} priority unoptimized /></div>
           <figcaption><span>CHEN ZHIYU</span><span>SINGAPORE / BEIJING</span></figcaption>
         </figure>
       </section>
