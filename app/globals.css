@@ -357,6 +357,7 @@ img { display: block; max-width: 100%; }
 .case-hero-ai { background: #d9dcf0; }
 .case-window { height: 440px; overflow: hidden; border-radius: 22px; background: #f9faf7; box-shadow: 19px 21px 0 rgba(67,124,99,.45); }
 .case-product-shot { width: 100%; height: calc(100% - 40px); object-fit: cover; object-position: center; }
+.case-hero-chainbank .case-product-shot { padding: 12px; object-fit: contain; background: #f1f4f3; }
 .case-hero-ai .case-window { box-shadow: 19px 21px 0 #858ac2; }
 .case-window-top { display: flex; align-items: center; gap: 6px; height: 40px; padding: 0 16px; border-bottom: 1px solid var(--line); }
 .case-window-top i { width: 7px; height: 7px; border-radius: 50%; background: #cad0ca; }
@@ -432,7 +433,8 @@ img { display: block; max-width: 100%; }
 .chain-story-visual { min-width: 0; margin: 0; }
 .chain-story-visual > span,.chain-story-visual figcaption { display: block; color: var(--muted); font-size: 7px; font-weight: 700; letter-spacing: .13em; }
 .chain-story-visual > div { position: relative; display: grid; place-items: center; min-height: 460px; margin: 16px 0 14px; overflow: hidden; border-radius: 28px; background: #e9efed; box-shadow: 0 30px 70px rgba(24,55,81,.1); }
-.chain-story-wide img { width: 100%; height: 100%; object-fit: cover; transition: transform 650ms cubic-bezier(.2,.7,.2,1); }
+.chain-story-wide > div { padding: clamp(12px,2vw,26px); }
+.chain-story-wide img { display: block; width: 100%; height: auto; object-fit: contain; border-radius: 15px; transition: transform 650ms cubic-bezier(.2,.7,.2,1); }
 .chain-story-pair > div { grid-template-columns: 1fr 1fr; gap: clamp(16px,2vw,28px); padding: clamp(26px,4vw,55px); background: #e4ece8; }
 .chain-story-pair img { width: 100%; height: auto; max-height: 530px; object-fit: contain; border-radius: 17px; box-shadow: 0 18px 38px rgba(24,55,81,.13); transition: transform 650ms cubic-bezier(.2,.7,.2,1); }
 .chain-story-pair img:first-child { transform: translateY(-16px) rotate(-1.2deg); }
@@ -452,7 +454,7 @@ img { display: block; max-width: 100%; }
 .chain-live-links span { color: var(--muted); font-size: 7px; letter-spacing: .1em; }
 
 @media (hover: hover) {
-  .chain-story-wide:hover img { transform: scale(1.025); }
+  .chain-story-wide:hover img { transform: scale(.99); }
   .chain-story-pair:hover img:first-child { transform: translateY(-22px) rotate(-1.8deg); }
   .chain-story-pair:hover img:last-child { transform: translateY(16px) rotate(1.8deg); }
 }

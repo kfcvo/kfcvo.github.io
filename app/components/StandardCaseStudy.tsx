@@ -5,7 +5,7 @@ import { ExperienceDemo } from "./ExperienceDemo";
 
 function CaseHeroVisual({ data }: { data: StandardCase }) {
   return (
-    <div className={`case-hero-visual case-hero-${data.kind}`} aria-hidden="true">
+    <div className={`case-hero-visual case-hero-${data.kind} ${data.heroImage?.includes("chainbank") ? "case-hero-chainbank" : ""}`} aria-hidden="true">
       <div className="case-window">
         <div className="case-window-top"><i /><i /><i /><span>{data.eyebrow}</span></div>
         {data.heroImage ? (
@@ -85,10 +85,12 @@ export function StandardCaseStudy({ data, slug }: { data: StandardCase; slug: st
         </section>
       )}
 
-      <footer className="case-closing">
-        <p className="eyebrow">END OF CASE</p>
-        <h2>清晰不是减少复杂度，<br />而是让复杂度可被理解。</h2>
-      </footer>
+      {slug !== "chainbank" && (
+        <footer className="case-closing">
+          <p className="eyebrow">END OF CASE</p>
+          <h2>清晰不是减少复杂度，<br />而是让复杂度可被理解。</h2>
+        </footer>
+      )}
     </article>
   );
 }
