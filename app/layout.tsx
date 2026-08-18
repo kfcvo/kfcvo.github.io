@@ -4,7 +4,7 @@ import "./globals.css";
 const description = "陈知雨的个人作品集：产品策略、AI 产品、复杂系统与视觉实践。";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://kfcvo.github.io"),
+  metadataBase: new URL("https://chen-zhiyu-portfolio.chenzhiyuzc.chatgpt.site"),
   title: { default: "陈知雨 · Product & AI Portfolio", template: "%s · 陈知雨" },
   description,
   openGraph: {

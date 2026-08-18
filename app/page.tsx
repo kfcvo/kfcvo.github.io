@@ -21,9 +21,9 @@ const practices = [
   },
   {
     number: "03",
-    title: "AI Exploration",
-    subtitle: "AI 原型与快速验证",
-    text: "把日常观察做成轻量工具，用原型尽早验证价值与体验。",
+    title: "AI & Tech",
+    subtitle: "AI 工具与新技术原型",
+    text: "把真实问题转化为可体验的 AI 工具与区块链实验。",
     href: "/works/ai",
     tone: "lime",
   },

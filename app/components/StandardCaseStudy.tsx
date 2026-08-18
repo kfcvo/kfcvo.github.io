@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { type StandardCase } from "../data";
+import { ExperienceDemo } from "./ExperienceDemo";
 
 function CaseHeroVisual({ data }: { data: StandardCase }) {
   return (
@@ -27,7 +28,8 @@ function CaseHeroVisual({ data }: { data: StandardCase }) {
   );
 }
 
-export function StandardCaseStudy({ data }: { data: StandardCase; slug: string }) {
+export function StandardCaseStudy({ data, slug }: { data: StandardCase; slug: string }) {
+  const hasDemo = slug === "company-info-check" || slug === "chainbank";
   return (
     <article className="case-study">
       <header className="case-hero">
@@ -36,9 +38,26 @@ export function StandardCaseStudy({ data }: { data: StandardCase; slug: string }
           <h1>{data.title}</h1>
           <p className="case-summary">{data.summary}</p>
           <div className="case-tags">{data.tags.map((tag) => <span key={tag}>{tag}</span>)}</div>
+          {(hasDemo || data.links?.length) && (
+            <div className="case-actions">
+              {hasDemo && <a href="#interactive-demo">TRY INTERACTIVE DEMO ↓</a>}
+              {data.links?.map((link) => <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label}</a>)}
+            </div>
+          )}
         </div>
         <CaseHeroVisual data={data} />
       </header>
+
+      {hasDemo && (
+        <section className="case-demo-section" id="interactive-demo">
+          <header>
+            <p className="eyebrow">INTERACTIVE RECONSTRUCTION</p>
+            <h2>{slug === "chainbank" ? "体验一次测试网交易路径" : "从划选公司到投递判断"}</h2>
+            <p>{slug === "chainbank" ? "使用固定测试数据重建原始核心流程，不连接钱包，也不会发起真实链上交易。" : "点击不同公司，观察浏览器上下文如何被整理为可扫描、可核验的公司报告。"}</p>
+          </header>
+          <ExperienceDemo slug={slug} />
+        </section>
+      )}
 
       <section className="case-overview">
         <div className="overview-meta">
@@ -60,6 +79,14 @@ export function StandardCaseStudy({ data }: { data: StandardCase; slug: string }
           </article>
         ))}
       </section>
+
+      {slug === "chainbank" && (
+        <section className="case-archive-gallery" aria-label="ChainBank 原始项目截图">
+          <header><p className="eyebrow">ORIGINAL PROTOTYPE / 2026</p><h2>保留历史实现，重建可体验的叙事。</h2></header>
+          <figure><Image src="/ai/chainbank-transfer.png" alt="ChainBank 原始转账页面" width={984} height={1400} unoptimized /><figcaption>TRANSFER MONEY / ORIGINAL SCREEN</figcaption></figure>
+          <figure><Image src="/ai/chainbank-deposit.png" alt="ChainBank 原始存款页面" width={984} height={1214} unoptimized /><figcaption>DEPOSIT MONEY / ORIGINAL SCREEN</figcaption></figure>
+        </section>
+      )}
 
       <footer className="case-closing">
         <p className="eyebrow">END OF CASE</p>

@@ -53,27 +53,21 @@ export const workCategories: WorkCategory[] = [
   {
     id: "ai",
     index: "03",
-    title: "AI EXPERIENCE",
-    count: "3 experiments",
-    note: "把日常问题做成可用工具",
+    title: "AI & EMERGING TECH",
+    count: "2 experiments",
+    note: "从 AI 工具到区块链原型",
     items: [
       {
         index: "01",
-        title: "Career Copilot",
-        meta: "秋招公司研究插件",
-        href: "/works/ai/career-copilot",
+        title: "CompanyInfoCheck",
+        meta: "校招公司背调助手",
+        href: "/works/ai/company-info-check",
       },
       {
         index: "02",
-        title: "Japanese Translator",
-        meta: "日语翻译网页",
-        href: "/works/ai/japanese-translator",
-      },
-      {
-        index: "03",
-        title: "Vision Break",
-        meta: "视力休息提醒工具",
-        href: "/works/ai/vision-break",
+        title: "ChainBank",
+        meta: "区块链银行交易原型",
+        href: "/works/ai/chainbank",
       },
     ],
   },
@@ -286,6 +280,7 @@ export type StandardCase = {
   contribution: string;
   sections: Array<{ title: string; body: string }>;
   tags: string[];
+  links?: Array<{ label: string; href: string }>;
   placeholder?: boolean;
 };
 
@@ -351,52 +346,44 @@ export const standardCases: Record<string, StandardCase> = {
     tags: ["Replace", "With", "Your Content"],
     placeholder: true,
   },
-  "career-copilot": {
+  "company-info-check": {
     kind: "ai",
-    title: "Career Copilot",
-    eyebrow: "AI EXPERIENCE / 01",
-    status: "EXPLORATION PROTOTYPE",
-    summary: "一个面向求职场景的公司研究插件：选中公司名称后，快速整理业务、行业与口碑信息。",
-    metadata: [["Format", "Browser extension"], ["Focus", "Company research"], ["Role", "独立探索"], ["Stage", "Prototype"]],
-    contribution: "从求职准备中的重复检索出发，定义信息框架、提示词与浏览器上下文交互，探索更低摩擦的公司研究体验。",
+    title: "CompanyInfoCheck",
+    eyebrow: "AI & EMERGING TECH / 01",
+    status: "WORKING PROTOTYPE",
+    heroImage: "/ai/company-info-check.png",
+    summary: "面向校招求职者的浏览器公司背调助手：在招聘网页中划选公司名称，即可获得带公开证据、置信度与个性化判断的投递建议。",
+    metadata: [["Format", "Chrome extension"], ["Role", "独立设计与开发"], ["Architecture", "React + FastAPI"], ["Stage", "Working prototype"]],
+    contribution: "独立完成从问题定义、浏览器交互到信息检索与证据整理的完整原型，并围绕隐私边界、来源质量和结论可信度设计降级策略。",
     sections: [
-      { title: "01 / Problem", body: "求职者研究陌生公司时，需要在官网、行业信息与口碑来源之间反复切换，信息收集成本高且判断框架不稳定。" },
-      { title: "02 / Solution", body: "通过浏览器上下文识别公司名称，将业务、行业位置、增长信号与风险提示组织成一份可快速阅读的研究摘要。" },
-      { title: "03 / Build process", body: "原型重点验证信息层级、来源提示与生成结果的可扫描性，并持续调整提示词以减少宽泛、重复的结论。" },
-      { title: "04 / Next step", body: "下一步将补充来源可信度标记、用户自定义研究维度，以及对不同岗位更有针对性的结论结构。" },
+      { title: "01 / Problem", body: "校招求职者研究陌生公司时，需要在官网、招聘平台、员工社区和社交媒体之间反复切换。信息口径不一，零散内容也很难直接回答“这家公司是否适合我、是否值得优先投递”。" },
+      { title: "02 / Product decision", body: "产品被设计成浏览器侧边栏，而不是独立搜索网站。用户在岗位页面划选公司名称后，系统同时读取岗位、城市和招聘批次上下文，将背调动作嵌入原有浏览路径，减少复制、切页和重复输入。" },
+      { title: "03 / Evidence strategy", body: "报告将公司业务、薪资、工作节奏和员工反馈拆分呈现，并保留公开来源、相关度和置信度。证据不足或不同来源存在冲突时，系统明确返回“信息不足”或“需要核验”，避免用流畅表达掩盖事实缺口。" },
+      { title: "04 / System design", body: "浏览器扩展负责划词、页面上下文、简历偏好与结果展示；FastAPI 后端负责任务编排、公开搜索、证据去重和缓存。简历仅在内存中解析并移除联系方式，浏览器只保存用户确认后的结构化偏好。" },
+      { title: "05 / Prototype", body: "目前已完成从首次设置、简历解析、网页划词到渐进式公司报告的完整原型，并为搜索服务不可用、证据不足和缓存命中设计了可解释状态。站内演示使用脱敏固定数据，不上传简历，也不调用外部搜索服务。" },
     ],
-    tags: ["Browser Extension", "LLM", "Research"],
+    tags: ["Browser Extension", "Evidence", "FastAPI", "Privacy", "AI Product"],
+    links: [{ label: "VIEW SOURCE ON GITHUB ↗", href: "https://github.com/kfcvo/CompanyInfoCheck" }],
   },
-  "japanese-translator": {
+  "chainbank": {
     kind: "ai",
-    title: "Japanese Translator",
-    eyebrow: "AI EXPERIENCE / 02",
-    status: "WEB PROTOTYPE",
-    summary: "一个可直接体验的日语翻译网页。当前页面先定义展示结构，后续接入真实网站、截图与 GitHub。",
-    metadata: [["Format", "Web app"], ["Focus", "Contextual translation"], ["Role", "独立探索"], ["Stage", "Prototype"]],
-    contribution: "围绕“理解而不仅是直译”设计输入、译文与语言解释的层级，并完成轻量网页原型。",
+    title: "ChainBank",
+    eyebrow: "AI & EMERGING TECH / 02",
+    status: "LIVE ARCHIVE / COURSE PROJECT",
+    heroImage: "/ai/chainbank-dashboard.png",
+    summary: "基于 Ethereum Sepolia 测试网的银行交易原型，通过地址化账户、资金存入、转账和操作日志，探索智能合约参与资金管理与交易验证的基本路径。",
+    metadata: [["Period", "2026.01"], ["Role", "独立开发者"], ["Network", "Ethereum Sepolia"], ["Deployment", "Render live archive"]],
+    contribution: "作为个人课程项目，独立完成交易场景定义、页面交互、Solidity 合约实验与 Web 部署，把合约调用过程转译为可理解的存款、转账和记录查询流程。",
     sections: [
-      { title: "01 / Use case", body: "面向日语学习与日常阅读场景，重点处理语气、上下文和文化表达在普通直译中容易丢失的问题。" },
-      { title: "02 / Experience", body: "把结果拆成自然译文、关键词解释和语气提示，让用户既能快速使用，也能理解表达为什么成立。" },
-      { title: "03 / Build process", body: "通过提示词约束输出结构，并在前端保持输入、结果与复制操作的清晰节奏，降低信息噪音。" },
-      { title: "04 / Outcome", body: "当前完成核心网页原型；后续计划加入术语偏好、历史记录与不同文体的表达模式。" },
+      { title: "01 / Background", body: "项目源于区块链课程对智能合约和去中心化交易流程的实践要求。我选择银行操作作为载体，将抽象的地址、合约调用和交易确认转化为更熟悉的存款与转账任务。" },
+      { title: "02 / Core flow", body: "系统围绕四个基础能力展开：账户地址输入、资金存入、地址间转账和操作日志。用户完成表单后可以查看最近一笔交易记录，理解付款方、收款方、金额与交易状态之间的关系。" },
+      { title: "03 / Contract experiment", body: "智能合约使用 Solidity 在 Remix IDE 中编写，并在 Ethereum Sepolia 测试网上完成课程实验。项目重点是理解前端操作、合约方法和测试网交易之间的连接，而不是将原型包装为生产级金融系统。" },
+      { title: "04 / Deployment & reflection", body: "Web 应用部署于 Render，原始版本目前仍可访问。由于历史合约源码未完整保留，作品集内的演示采用固定测试数据重建交互，同时保留原始部署与 GitHub 链接，明确区分历史实现和当前展示。" },
     ],
-    tags: ["Web App", "Translation", "Prompt"],
-  },
-  "vision-break": {
-    kind: "ai",
-    title: "Vision Break",
-    eyebrow: "AI EXPERIENCE / 03",
-    status: "CONCEPT PROTOTYPE",
-    summary: "围绕长时间使用电脑造成的视觉疲劳，探索更自然、更难被忽略的休息提醒机制。",
-    metadata: [["Format", "Desktop tool"], ["Focus", "Digital wellbeing"], ["Role", "独立探索"], ["Stage", "Concept"]],
-    contribution: "从长期电脑工作中的视觉疲劳出发，探索兼顾有效提醒与用户控制感的桌面干预机制。",
-    sections: [
-      { title: "01 / Observation", body: "普通通知很容易被忽略，而过强的强制中断又会破坏专注；提醒是否有效取决于时机、强度与退出成本。" },
-      { title: "02 / Mechanism", body: "概念采用渐进式屏幕变化，在不突然打断工作的情况下逐步提高提示强度，并始终保留延后与退出入口。" },
-      { title: "03 / Prototype", body: "原型用于验证提醒层级、文案语气和恢复工作前的过渡体验，避免把健康工具做成新的压力来源。" },
-      { title: "04 / Next step", body: "下一步将测试不同工作节奏下的接受度，并探索基于连续使用时长动态调整提醒频率。" },
+    tags: ["Solidity", "Remix IDE", "Sepolia", "Web Prototype", "Render"],
+    links: [
+      { label: "OPEN ORIGINAL DEPLOYMENT ↗", href: "https://six106-assignment.onrender.com" },
+      { label: "VIEW SOURCE ON GITHUB ↗", href: "https://github.com/kfcvo/ChainBank-BlockchainBankingSystem" },
     ],
-    tags: ["Desktop", "Wellbeing", "Prototype"],
   },
 };
