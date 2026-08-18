@@ -15,9 +15,17 @@ export default function AboutPage() {
       <section className="about-hero">
         <div className="about-title">
           <p className="eyebrow">ABOUT / 陈知雨</p>
+          <h1>陈知雨</h1>
+          <p className="about-name-en">CHEN ZHIYU · ZHIRAIN</p>
         </div>
         <figure className="about-portrait">
-          <div className="portrait-frame"><Image src="/about-graduation.jpg" alt="陈知雨毕业照" width={1280} height={1920} priority unoptimized /></div>
+          <div className="portrait-fold" role="img" aria-label="陈知雨毕业照">
+            {["fold-left", "fold-center", "fold-right"].map((panel) => (
+              <span className={`portrait-fold-panel ${panel}`} key={panel}>
+                <Image src="/about-graduation.jpg" alt="" width={1280} height={1920} priority unoptimized />
+              </span>
+            ))}
+          </div>
           <figcaption><span>CHEN ZHIYU</span><span>SINGAPORE / BEIJING</span></figcaption>
         </figure>
       </section>
