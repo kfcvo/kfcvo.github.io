@@ -8,6 +8,12 @@ const capabilities = [
   ["03", "Creative", "信息架构、交互设计、视觉叙事、AIGC 工作流"],
 ];
 
+const portraitPanels = [
+  { className: "fold-left", src: "/about-graduation.jpg", width: 1280, height: 1920 },
+  { className: "fold-center", src: "/about-changi.jpg", width: 1350, height: 1800 },
+  { className: "fold-right", src: "/about-egypt.jpg", width: 1312, height: 1800 },
+];
+
 export default function AboutPage() {
   return (
     <main className="about-page" id="top">
@@ -19,10 +25,10 @@ export default function AboutPage() {
           <p className="about-name-en">CHEN ZHIYU · ZHIRAIN</p>
         </div>
         <figure className="about-portrait">
-          <div className="portrait-fold" role="img" aria-label="陈知雨毕业照">
-            {["fold-left", "fold-center", "fold-right"].map((panel) => (
-              <span className={`portrait-fold-panel ${panel}`} key={panel}>
-                <Image src="/about-graduation.jpg" alt="" width={1280} height={1920} priority unoptimized />
+          <div className="portrait-fold" role="img" aria-label="陈知雨的毕业与旅行照片组合">
+            {portraitPanels.map((panel) => (
+              <span className={`portrait-fold-panel ${panel.className}`} key={panel.src}>
+                <Image src={panel.src} alt="" width={panel.width} height={panel.height} priority unoptimized />
               </span>
             ))}
           </div>
